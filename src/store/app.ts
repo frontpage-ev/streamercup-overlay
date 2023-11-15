@@ -17,9 +17,17 @@ export const useAppStore = defineStore('app', () => {
         forceTLS: false,
         disableStats: true,
         enabledTransports: ['ws', 'wss'],
+        channelAuthorization: {
+            transport: 'ajax',
+            endpoint: 'https://streamercup-api.chrotos.net/api/socket',
+            headers: {
+                Authorization: 'Host TwitchCologne'
+            }
+        },
     })
 
     onMounted(() => {
+        pusher.signin();
         const channel = pusher.subscribe('cache-host')
         channel.bind('gamestate', (data: any) => {
             if (data.setup.crew.game_host.listed.uuid !== '00000000-0000-0000-0000-000000000000') {
