@@ -1,0 +1,16 @@
+@import url(https://fonts.bunny.net/css?family=inter:100,200,300,400,500,600,700,800,900|roboto:100,100i,300,400,500,700,900|rubik:300|tourney:100,200,300,400,500,600,700,800,900);
+
+@font-face {
+    font-family: Roobert;
+    src: url("/assets/fonts/Roobert-Regular.otf") format("opentype");
+}
+
+@font-face {
+    font-family: Roobert;
+    font-weight: bold;
+    src: url("/assets/fonts/Roobert-Bold.otf") format("opentype");
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
