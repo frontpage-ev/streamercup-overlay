@@ -18,7 +18,7 @@
   <Transition name="slide">
     <div
         v-if="visible"
-        class="h-full bg-primary p-5"
+        class="h-full bg-primary p-[25px]"
     >
       <div class="flex flex-col justify-between h-full text-center">
         <AppCard class="text-primary font-bold">

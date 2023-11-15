@@ -1,11 +1,13 @@
 import { defineStore } from 'pinia'
-import { onMounted, onUnmounted, ref, Ref } from 'vue'
+import { ref, Ref } from 'vue'
 import { GameSetup, GameState } from '../types'
 import Pusher from 'pusher-js'
 
 export const useAppStore = defineStore('app', () => {
     const state: Ref<GameState | null> = ref(null)
     const setup: Ref<GameSetup | null> = ref(null)
+
+    const params = new URLSearchParams(window.location.search)
 
     const socketKey = 'KEY'
     const socketBaseUrl = 'streamercup-socket.chrotos.net'
@@ -19,27 +21,23 @@ export const useAppStore = defineStore('app', () => {
         enabledTransports: ['ws', 'wss'],
         channelAuthorization: {
             transport: 'ajax',
-            endpoint: 'https://streamercup-api.chrotos.net/api/socket',
+            endpoint: params.get('mock')
+                ? 'https://streamercup-api-mock.chrotos.net/api/socket'
+                : 'https://streamercup-api.chrotos.net/api/socket',
             headers: {
-                Authorization: 'Host TwitchCologne'
-            }
+                Authorization: 'Host TwitchCologne',
+            },
         },
     })
 
-    onMounted(() => {
-        pusher.signin();
-        const channel = pusher.subscribe('cache-host')
-        channel.bind('gamestate', (data: any) => {
-            if (data.setup.crew.game_host.listed.uuid !== '00000000-0000-0000-0000-000000000000') {
-                state.value = data.state as GameState
-                setup.value = data.setup as GameSetup
-                console.log(data)
-            }
-        })
-    })
-
-    onUnmounted(() => {
-        pusher.disconnect()
+    pusher.subscribe('presence-host')
+    const channel = pusher.subscribe('cache-host')
+    channel.bind('gamestate', (data: any) => {
+        if (data.setup.crew.game_host.listed.uuid !== '00000000-0000-0000-0000-000000000000') {
+            state.value = data.state as GameState
+            setup.value = data.setup as GameSetup
+            console.log(data)
+        }
     })
 
     return {
