@@ -2,7 +2,7 @@
   <div class="w-[500px] h-[90px] bg-white rounded-md p-[10px] flex flex-col justify-between">
     <div class="flex justify-between items-center">
       <div>
-        <img src="assets/MAW_Germany_RGB.png" alt="" class="h-[45px]">
+        <img src="/assets/MAW_Germany_RGB.png" alt="" class="h-[45px]">
       </div>
       <div class="text-[26px] text-[#0057B8] font-bold">
         {{ format(currentAmount) }} / {{ format(targetAmount) }} €
