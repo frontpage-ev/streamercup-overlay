@@ -1,14 +1,16 @@
+export interface GameVoteOption {
+    game: {
+        id: number
+        name: string
+        display_name: string
+        description: string
+    }
+    votes: number
+}
+
 export interface Vote {
     counter_ms: number
-    options: {
-        game: {
-            id: number
-            name: string
-            display_name: string
-            description: string
-        }
-        votes: number
-    }[]
+    options: GameVoteOption[]
 }
 
 export interface Player {
