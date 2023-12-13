@@ -81,3 +81,24 @@ export interface RootState {
     state: GameState,
     setup: GameSetup
 }
+
+export interface CharityCampaign {
+    id: string,
+    broadcaster_id: string,
+    broadcaster_name: string,
+    broadcaster_login: string,
+    charity_name: string,
+    charity_description: string,
+    charity_logo: string,
+    charity_website: string,
+    current_amount: {
+        value: number,
+        currency: string,
+        decimal_places: number
+    },
+    target_amount: {
+        value: number,
+        currency: string,
+        decimal_places: number
+    }
+}
