@@ -104,3 +104,8 @@ export interface CharityCampaign {
         decimal_places: number
     }
 }
+
+export interface Placement {
+    name: string,
+    place: number
+}

@@ -3,7 +3,7 @@
     <div class="text-primary font-bold">
       {{ props.name }}
     </div>
-    <div class="text-base">
+    <div class="text-base font-bold mt-2">
       {{ props.description }}
     </div>
     <div class="text-left font-medium">

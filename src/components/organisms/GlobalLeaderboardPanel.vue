@@ -1,6 +1,6 @@
 <template>
   <AppLeaderboard
-      title="Punktestand"
+      title="Gesamtwertung"
       :placements="placements"
   />
 </template>
@@ -16,7 +16,7 @@ const appStore = useAppStore()
 const {state} = storeToRefs(appStore)
 
 const placements = computed(() => {
-  let players = state.value?.current_game.scores?.players?.sort((a: Player, b: Player) => b.score - a.score)
+  let players = state.value?.total.players?.sort((a: Player, b: Player) => b.score - a.score)
   if (!players) {
     return []
   }

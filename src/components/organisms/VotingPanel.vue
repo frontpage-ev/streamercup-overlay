@@ -18,10 +18,27 @@
 .slide-leave-to {
   transform: translate(-100%, 0);
 }
+
+.fade-leave-active,
+.fade-enter-active {
+  transition: 0.5s;
+}
+
+.fade-leave-active {
+  transition-delay: 10s;
+}
+
+.fade-enter-from {
+  opacity: 0;
+}
+
+.fade-leave-to {
+  opacity: 0;
+}
 </style>
 
 <template>
-  <Transition name="slide">
+  <Transition name="fade">
     <div
         v-show="visible"
         class="h-full bg-primary p-[25px]"
@@ -52,8 +69,10 @@
             v-else
             class="h-full flex items-center"
         >
-          <div class="text-4xl w-full font-bold">
-            <div class="text-white mb-8">Voting beendet!</div>
+          <div class="text-4xl w-full">
+            <div class="text-white mb-8 font-bold">
+              Voting beendet!
+            </div>
 
             <VoteOption
                 v-if="result"

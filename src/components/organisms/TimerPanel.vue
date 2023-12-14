@@ -1,6 +1,6 @@
 <template>
   <div
-      v-if="state && state.current_game.timer_main_ms > 0"
+      v-if="state"
       class="bg-primary rounded-md p-5 text-center"
   >
     <AppTimer :ms="state.current_game.timer_main_ms" />
