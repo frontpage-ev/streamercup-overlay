@@ -1,6 +1,6 @@
 <template>
   <AppLeaderboard
-      title="Punktestand"
+      title="Rangliste"
       :placements="placements"
   />
 </template>
