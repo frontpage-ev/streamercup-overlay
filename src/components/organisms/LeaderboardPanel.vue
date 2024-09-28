@@ -24,7 +24,7 @@ const placements = computed(() => {
   let placements: Placement[] = []
   let place: number = 0, score: number = 0
   players.forEach(player => {
-    if (player.score < score || place == 0) {
+    if (player.score !== score || place == 0) {
       place++
     }
     score = player.score
