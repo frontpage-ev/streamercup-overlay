@@ -38,13 +38,7 @@ export interface GameState {
     }
     vote: Vote | null
     total: {
-        players: {
-            player: {
-                uuid: string
-                name: string
-            }
-            score: number
-        }[]
+        players: Player[]
     }
 }
 
