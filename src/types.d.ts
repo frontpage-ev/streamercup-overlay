@@ -18,6 +18,7 @@ export interface Player {
         uuid: string
         name: string
     }
+    presentation_order: number
     score: number
 }
 

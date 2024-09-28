@@ -16,7 +16,7 @@ const appStore = useAppStore()
 const {state} = storeToRefs(appStore)
 
 const placements = computed(() => {
-  let players = state.value?.current_game.scores?.players?.sort((a: Player, b: Player) => b.score - a.score)
+  let players = state.value?.current_game.scores?.players?.sort((a: Player, b: Player) => a.presentation_order - b.presentation_order)
   if (!players) {
     return []
   }

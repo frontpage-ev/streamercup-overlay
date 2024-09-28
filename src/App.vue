@@ -25,6 +25,10 @@
   <template v-if="component === 'donation-panel'">
     <DonationPanel />
   </template>
+
+  <template v-if="component === 'branding'">
+    <BrandingPanel />
+  </template>
 </template>
 
 <script setup lang="ts">
@@ -37,6 +41,7 @@ import GlobalLeaderboardPanel from './components/organisms/GlobalLeaderboardPane
 import { storeToRefs } from 'pinia'
 import { useAppStore } from './store/app'
 import AppCenterElement from './components/atoms/AppCenterElement.vue'
+import BrandingPanel from "./components/organisms/BrandingPanel.vue";
 
 const params = new URLSearchParams(window.location.search)
 const component: Ref<string | null> = ref(params.get('component'))
