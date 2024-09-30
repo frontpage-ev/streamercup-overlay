@@ -1,10 +1,11 @@
 <template>
-  <div
+  <span
       v-if="state"
-      class="bg-primary rounded-md p-5 text-center"
+      class="bg-primary rounded-md p-3 text-center"
   >
-    <AppTimer :ms="state.current_game.timer_main_ms" />
-  </div>
+    <AppTimer v-if="state.current_game.timer_main_ms > 0" :ms="state.current_game.timer_main_ms" />
+    <AppTimer v-if="state.vote?.counter_ms" :ms="state.vote?.counter_ms" />
+  </span>
 </template>
 
 <script setup lang="ts">

@@ -102,5 +102,5 @@ export interface CharityCampaign {
 
 export interface Placement {
     name: string,
-    place: number
+    place: number,
 }

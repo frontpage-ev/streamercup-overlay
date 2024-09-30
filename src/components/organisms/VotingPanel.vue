@@ -41,16 +41,14 @@
   <Transition name="fade">
     <div
         v-show="visible"
-        class="h-full bg-primary p-[25px]"
+        class="h-full p-[25px]"
     >
-      <div class="flex flex-col justify-between h-full text-center">
-        <AppCard class="text-primary font-bold">
+      <div class="flex flex-col h-full text-center gap-8">
+        <AppCard class="text-white font-bold">
           Voting
         </AppCard>
 
         <template v-if="state && state.vote && state.vote.counter_ms > 0">
-          <AppTimer :ms="state.vote.counter_ms" />
-
           <div class="grid gap-5">
             <template
                 v-for="option in state.vote.options"

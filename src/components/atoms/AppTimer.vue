@@ -1,8 +1,7 @@
 <template>
-  <div class="text-5xl text-white font-bold">
-    <i class="fas fa-solid fa-hourglass-clock"></i>
+  <span class="text-3xl text-white font-bold">
     {{ formatTime(props.ms) }}
-  </div>
+  </span>
 </template>
 
 <script setup lang="ts">

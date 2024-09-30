@@ -1,26 +1,32 @@
 <template>
   <div
-      v-if="component === 'combined'"
-      class="relative w-[400px] h-[856px] bg-black/20"
+    v-if="component === 'leaderboard'"
+    class="relative w-[746px] h-[143px]"
   >
+    <div class="absolute z-[2] w-full h-full">
+        <div class="flex flex-col gap-3">
+          <div class="h-[91px]">
+            <LeaderboardPanel v-if="showLeaderboard" />
+          </div>
+          <div class="flex justify-center">
+            <TimerPanel v-if="showLeaderboardTimer" />
+            <TimerPanel v-if="showVotingTimer" />
+          </div>
+        </div>
+    </div>
+
+    <div class="absolute z-[1] w-full h-full">
+        <GlobalLeaderboardPanel />
+    </div>
+  </div>
+
+  <template v-if="component === 'voting'">
     <AppCenterElement
         class="absolute z-[3]"
     >
       <VotingPanel />
     </AppCenterElement>
-    <AppCenterElement
-        v-if="showTimer || showLeaderboard"
-        class="absolute z-[2] gap-4 flex-col bg-primary"
-    >
-      <TimerPanel v-if="showTimer" />
-      <LeaderboardPanel v-if="showLeaderboard" />
-    </AppCenterElement>
-    <AppCenterElement
-        class="absolute z-[1] bg-primary"
-    >
-      <GlobalLeaderboardPanel />
-    </AppCenterElement>
-  </div>
+  </template>
 
   <template v-if="component === 'donation-panel'">
     <DonationPanel />
@@ -51,5 +57,6 @@ const {state} = storeToRefs(appStore)
 
 //const showGlobalLeaderboard = computed(() => state.value?.current_game?.timer_main_ms == 0)
 const showLeaderboard = computed(() => state.value?.current_game?.timer_main_ms != 0 && state.value?.current_game?.id)
-const showTimer = computed(() => state.value?.current_game ? state.value?.current_game?.timer_main_ms > 0 : false)
+const showLeaderboardTimer = computed(() => state.value?.current_game ? state.value?.current_game?.timer_main_ms > 0 : false)
+const showVotingTimer = computed(() => state.value?.vote?.counter_ms ? state.value.vote?.counter_ms > 0 : false)
 </script>
