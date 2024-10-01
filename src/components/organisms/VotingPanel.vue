@@ -87,7 +87,6 @@
 
 <script setup lang="ts">
 import AppCard from '../AppCard.vue'
-import AppTimer from '../atoms/AppTimer.vue'
 import VoteOption from '../VoteOption.vue'
 import { useAppStore } from '../../store/app'
 import { storeToRefs } from 'pinia'

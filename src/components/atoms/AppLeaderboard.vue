@@ -18,7 +18,7 @@
     </div>
     <!--------- Logo --------->
     <div class="w-full flex flex-col items-center justify-center align-middle h-full col-span-1">
-      <img src="assets/Logo-White-Clean-Modern@2x.png" class="h-[80px]">
+      <img src="/assets/Logo-White-Clean-Modern@2x.png" class="h-[80px]" alt="">
     </div>
     <!-- Right Participants -->
     <div class="w-full flex items-start col-span-4 justify-evenly">
@@ -41,7 +41,6 @@
 import LeaderboardItem from './LeaderboardItem.vue'
 import { Placement } from '../../types'
 import { PropType } from 'vue'
-import AppCard from '../AppCard.vue'
 
 const props = defineProps({
   placements: {
@@ -54,7 +53,7 @@ const props = defineProps({
   },
 })
 
-function getDiscordId(name: String): String|null {
+function getDiscordId(name: string): string|null {
   switch (name.toLocaleLowerCase()) {
     // Tester
     case 'katzen48':

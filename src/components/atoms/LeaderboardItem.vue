@@ -4,6 +4,7 @@
   >
     <div class="relative">
       <iframe
+          v-if="discord"
           :src="fugiUrl"
           width="55"
           height="55"
@@ -14,7 +15,7 @@
             {'border-[#cd7f32]': props.place === 3},
             {'border-[#bfabff]': props.place > 3},
           ]"
-     />
+      />
       <span
           v-if="props.place <= 3"
           :class="[
@@ -48,7 +49,7 @@
 </template>
 
 <script setup lang="ts">
-import {computed} from "vue";
+import { computed, PropType } from 'vue'
 
 const props = defineProps({
   place: {
@@ -60,7 +61,7 @@ const props = defineProps({
     required: true,
   },
   discord: {
-    type: String,
+    type: String as PropType<string | null>,
     required: true,
   },
 })
