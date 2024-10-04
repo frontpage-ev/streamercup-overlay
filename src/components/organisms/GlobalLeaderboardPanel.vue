@@ -1,4 +1,5 @@
 <template>
+  <!-- TODO Host -->
   <AppLeaderboard
       title="Gesamtwertung"
       :placements="placements"
