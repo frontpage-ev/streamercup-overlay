@@ -100,7 +100,16 @@ export interface CharityCampaign {
     }
 }
 
+export interface Placements {
+    [key: string]: Placement
+}
+
 export interface Placement {
     name: string,
-    place: number,
+    order: number,
+    points: number
+}
+
+export interface Places {
+    [key: string]: number
 }

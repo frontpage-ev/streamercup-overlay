@@ -8,13 +8,32 @@
 <script setup lang="ts">
 import { useAppStore } from '../../store/app'
 import { storeToRefs } from 'pinia'
-import { computed } from 'vue'
-import { Placement, Player } from '../../types'
+import { ref, watch } from 'vue'
+import { Placements } from '../../types'
 import AppLeaderboard from '../atoms/AppLeaderboard.vue'
 
 const appStore = useAppStore()
 const {state} = storeToRefs(appStore)
+const placements = ref<Placements>({})
 
+watch(state, (newState) => {
+  if (newState?.current_game?.scores?.players?.length && newState.current_game.scores.players.length > 0) {
+    newState.current_game.scores.players.forEach((player) => {
+      if (!placements.value[player.player.uuid]) {
+        placements.value[player.player.uuid] = {
+          name: player.player.name,
+          order: player.presentation_order,
+          points: player.score
+        }
+      }
+
+      placements.value[player.player.uuid].order = player.presentation_order
+      placements.value[player.player.uuid].points = player.score
+    })
+  }
+})
+
+/*
 const placements = computed(() => {
   let players = state.value?.current_game.scores?.players?.sort((a: Player, b: Player) => a.presentation_order - b.presentation_order)
   if (!players) {
@@ -37,4 +56,5 @@ const placements = computed(() => {
 
   return placements
 })
+ */
 </script>
