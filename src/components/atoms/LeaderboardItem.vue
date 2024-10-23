@@ -109,8 +109,6 @@ function getDiscordId(name: string): string|null {
       return '81989081143181312'
 
       // Teilnehmer
-    case 'jinjaowo':
-      return '238969745586520065'
     case 'latwyla':
       return '257888336788586498'
     case 'nayamichan':
@@ -119,16 +117,24 @@ function getDiscordId(name: string): string|null {
       return '217342495774736384'
     case 'lunywoo':
       return '957647519041613904'
-    case 'finstey':
-      return '980142017432678460'
-    case 'monaeuphelia':
-      return '738807411237715991'
     case 'fuxel':
       return '430447041248886794'
     case 'clym':
       return '231339277139705857'
     case 'dershawn98':
       return '248499088914382848'
+    case 'lisatube':
+      return '266578385189339136'
+    case 'herrfliege':
+      return '191866167973904384'
+
+    // ehem. Teilnehmer
+    case 'jinjaowo':
+      return '238969745586520065'
+    case 'finstey':
+      return '980142017432678460'
+    case 'monaeuphelia':
+      return '738807411237715991'
 
     default:
       return null
