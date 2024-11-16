@@ -115,7 +115,7 @@ function getDiscordId(name: string): string|null {
       return '211981116393914369'
     case 'sillyemy':
       return '217342495774736384'
-    case 'lunywoo':
+    case 'lunywho':
       return '957647519041613904'
     case 'fuxel':
       return '430447041248886794'
