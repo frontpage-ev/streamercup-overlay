@@ -111,7 +111,7 @@ function getDiscordId(name: string): string|null {
     // Teilnehmer
     case 'latwyla':
       return '257888336788586498'
-    case 'nayamichan':
+    case 'nayamicha':
       return '211981116393914369'
     case 'sillyemy':
       return '217342495774736384'
@@ -121,9 +121,9 @@ function getDiscordId(name: string): string|null {
       return '430447041248886794'
     case 'clym':
       return '231339277139705857'
-    case 'dershawn98':
+    case 'dershawn9':
       return '248499088914382848'
-    case 'herrfliege':
+    case 'herrflieg':
       return '191866167973904384'
     case 'litbeit':
       return '320693808905846786'
