@@ -92,7 +92,7 @@ const fugiUrl = computed(() => {
 
 function getDiscordId(name: string): string|null {
   switch (name.toLocaleLowerCase()) {
-      // Tester
+    // Tester
     case 'katzen48':
       return '179291321058590720'
     case 'deradihab':
@@ -108,7 +108,7 @@ function getDiscordId(name: string): string|null {
     case 'chrotos':
       return '81989081143181312'
 
-      // Teilnehmer
+    // Teilnehmer
     case 'latwyla':
       return '257888336788586498'
     case 'nayamichan':
@@ -123,10 +123,10 @@ function getDiscordId(name: string): string|null {
       return '231339277139705857'
     case 'dershawn98':
       return '248499088914382848'
-    case 'lisatube':
-      return '266578385189339136'
     case 'herrfliege':
       return '191866167973904384'
+    case 'litbeit':
+      return '320693808905846786'
 
     // ehem. Teilnehmer
     case 'jinjaowo':
@@ -135,6 +135,8 @@ function getDiscordId(name: string): string|null {
       return '980142017432678460'
     case 'monaeuphelia':
       return '738807411237715991'
+    case 'lisatube':
+      return '266578385189339136'
 
     default:
       return null
